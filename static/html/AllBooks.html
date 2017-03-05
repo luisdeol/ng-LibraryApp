@@ -46,3 +46,12 @@
     </form>
 </div>
 
+<div id="list-books">
+    <ul class="collection with-header">
+        <li clas="collection-header"><h4>Books</h4></li>
+        <li ng-repeat="book in books" class="collection-item">
+          {{ book.title }}
+        </li>
+    </ul>
+</div>
+

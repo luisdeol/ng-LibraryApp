@@ -10,7 +10,12 @@
             .state('books', {
                 url: '/books',
                 templateUrl: '/static/html/AllBooks.html',
-                controller: 'AllBooksController'
+                controller: 'AllBooksController',
+                resolve: {
+                    books: function(dataService){
+                        return dataService.getAllBooks();
+                    }
+                }
             })
             .state('authors', {
                     url: '/authors',

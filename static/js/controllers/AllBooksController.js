@@ -3,13 +3,10 @@
  */
 (function(){
     angular.module('app')
-        .controller('AllBooksController', ['$scope', AllBooksController]);
+        .controller('AllBooksController', ['$scope', 'books', AllBooksController]);
 
-    function AllBooksController($scope) {
+    function AllBooksController($scope, books) {
+        $scope.books = books;
         $scope.message = "All Books Controller";
-        $scope.select = {
-            value: "Option1",
-            choices: ["Option1", "I'm an option", "This is materialize", "No, this is Patrick."]
-        };
     }
 }());

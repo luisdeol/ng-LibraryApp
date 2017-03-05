@@ -18,15 +18,25 @@
                 }
             })
             .state('authors', {
-                    url: '/authors',
-                    templateUrl: '/static/html/AllAuthors.html',
-                    controller: 'AllAuthorsController'
-                })
+                url: '/authors',
+                templateUrl: '/static/html/AllAuthors.html',
+                controller: 'AllAuthorsController',
+                resolve: {
+                    authors: function(dataService){
+                        return dataService.getAllAuthors();
+                    }
+                }
+            })
             .state('publishers', {
-                    url: '/publishers',
-                    templateUrl: '/static/html/AllPublishers.html',
-                    controller: 'AllPublishersController'
-                })
+                url: '/publishers',
+                templateUrl: '/static/html/AllPublishers.html',
+                controller: 'AllPublishersController',
+                resolve: {
+                    publishers: function(dataService){
+                        return dataService.getAllPublishers();
+                    }
+                }
+            })
             .state('bookDetails', {
                     url: '/books/:id',
                     templateUrl: '/static/html/BookDetails.html',

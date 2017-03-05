@@ -1,11 +1,10 @@
-/**
- * Created by luisdeolpy on 04/03/2017.
- */
+/** Created by luisdeolpy on 04/03/2017.**/
 (function(){
     angular.module('app')
-        .controller('AllAuthorsController', ['$scope', AllAuthorsController]);
+        .controller('AllAuthorsController', ['$scope', 'authors', AllAuthorsController]);
 
-    function AllAuthorsController($scope) {
-        $scope.message = "All Authors Controller";
+    function AllAuthorsController($scope, authors) {
+        $scope.message = "All Authors";
+        $scope.authors = authors;
     }
 }());

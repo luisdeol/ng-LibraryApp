@@ -6,7 +6,7 @@
         .controller('AllBooksController', ['$scope', 'books', AllBooksController]);
 
     function AllBooksController($scope, books) {
+        $scope.message = "All Books";
         $scope.books = books;
-        $scope.message = "All Books Controller";
     }
 }());

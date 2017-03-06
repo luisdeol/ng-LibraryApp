@@ -4,6 +4,7 @@
         .controller('AllPublishersController', ['$scope', 'publishers', AllPublishersController]);
 
     function AllPublishersController($scope, publishers) {
+        $scope.showForm = false;
         $scope.message = "All Publishers";
         $scope.publishers = publishers;
     }

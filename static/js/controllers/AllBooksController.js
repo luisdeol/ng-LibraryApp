@@ -6,6 +6,7 @@
         .controller('AllBooksController', ['$scope', 'books', AllBooksController]);
 
     function AllBooksController($scope, books) {
+        $scope.showForm = false;
         $scope.message = "All Books";
         $scope.books = books;
     }

@@ -4,6 +4,7 @@
         .controller('AllAuthorsController', ['$scope', 'authors', AllAuthorsController]);
 
     function AllAuthorsController($scope, authors) {
+        $scope.showForm = false;
         $scope.message = "All Authors";
         $scope.authors = authors;
     }

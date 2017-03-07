@@ -1,3 +1,18 @@
 {{ message }}
 
-<div></div>
+<h4>{{ author.fullname }}</h4>
+
+<dl>
+    <dt>First Name</dt>
+    <dd>{{ author.first_name }}</dd>
+    <dt>Last Name</dt>
+    <dd>{{  author.last_name }}</dd>
+    <dt>Books</dt>
+    <dd>
+        <ul>
+            <li ng-repeat="book in author.books">
+                {{ book.title }}, {{ book.publish_year }}
+            </li>
+        </ul>
+    </dd>
+</dl>

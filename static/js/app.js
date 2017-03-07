@@ -50,7 +50,12 @@
             .state('authorDetails', {
                     url: '/authors/:id',
                     templateUrl: '/static/html/AuthorDetails.html',
-                    controller: 'AuthorController'
+                    controller: 'AuthorController',
+                    resolve: {
+                        author: function(dataService, $stateParams){
+                            return dataService.getAuthor($stateParams.id);
+                        }
+                    }
                 })
             .state('publisherDetails', {
                     url: '/publishers/:id',

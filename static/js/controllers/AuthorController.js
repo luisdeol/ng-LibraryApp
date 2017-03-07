@@ -3,9 +3,12 @@
  */
 (function(){
     angular.module('app')
-        .controller('AuthorController', ['$scope', AuthorController]);
+        .controller('AuthorController', ['$scope', '$log', 'author', AuthorController]);
 
-    function AuthorController($scope) {
-        $scope.message = "Author Controller";
+    function AuthorController($scope, $log, author) {
+        $scope.message = "Author Details";
+        $scope.author = author;
+        $log.log($scope.author.books);
+        $scope.author.fullname = author.last_name+", "+author.first_name;
     }
 }());

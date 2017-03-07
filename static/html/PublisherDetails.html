@@ -1,3 +1,18 @@
-{{ message }}
+<a ui-sref="publishers">Back to Publishers List</a></br>
 
-<div></div>
+<h5>{{ message }}</h5>
+
+<h4>{{ publisher.name }}</h4>
+
+<dl>
+    <dt>Name</dt>
+    <dd>{{ publisher.name }}</dd>
+    <dt>Books</dt>
+    <dd>
+        <ul>
+            <li ng-repeat="book in publisher.books">
+                {{ book.title }}, {{ book.publish_year }}
+            </li>
+        </ul>
+    </dd>
+</dl>

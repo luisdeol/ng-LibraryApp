@@ -3,9 +3,10 @@
  */
 (function(){
     angular.module('app')
-        .controller('PublisherController', ['$scope', PublisherController]);
+        .controller('PublisherController', ['$scope', 'publisher', PublisherController]);
 
-    function PublisherController($scope) {
-        $scope.message = "Publisher Controller";
+    function PublisherController($scope, publisher) {
+        $scope.message = "Publisher Details";
+        $scope.publisher = publisher;
     }
 }());

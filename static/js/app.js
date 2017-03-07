@@ -60,7 +60,12 @@
             .state('publisherDetails', {
                     url: '/publishers/:id',
                     templateUrl: '/static/html/PublisherDetails.html',
-                    controller: 'PublisherController'
+                    controller: 'PublisherController',
+                    resolve: {
+                        publisher: function(dataService, $stateParams){
+                            return dataService.getPublisher($stateParams.id);
+                        }
+                    }
                 });
     }])
 }());

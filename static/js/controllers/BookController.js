@@ -6,9 +6,10 @@
  */
 (function(){
     angular.module('app')
-        .controller('BookController', ['$scope', BookController]);
+        .controller('BookController', ['$scope', 'book', BookController]);
 
-    function BookController($scope) {
-        $scope.message = "Book Controller";
+    function BookController($scope, book, author) {
+        $scope.message = "Book Details";
+        $scope.book = book;
     }
 }());

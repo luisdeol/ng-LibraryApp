@@ -40,7 +40,12 @@
             .state('bookDetails', {
                     url: '/books/:id',
                     templateUrl: '/static/html/BookDetails.html',
-                    controller: 'BookController'
+                    controller: 'BookController',
+                    resolve: {
+                        book: function(dataService, $stateParams){
+                            return dataService.getBook($stateParams.id);
+                        }
+                    }
                 })
             .state('authorDetails', {
                     url: '/authors/:id',

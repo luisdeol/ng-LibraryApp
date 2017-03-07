@@ -1,5 +1,5 @@
 from .models import Book, Publisher, Author
-from .serializers import BookSerializer, PublisherSerializer, AuthorSerializer
+from .serializers import PublisherSerializer, AuthorSerializer, BookSerializer
 from rest_framework.viewsets import ModelViewSet
 from rest_framework import permissions
 

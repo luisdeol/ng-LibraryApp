@@ -10,7 +10,10 @@
         return {
             getAllBooks: getAllBooks,
             getAllAuthors: getAllAuthors,
-            getAllPublishers: getAllPublishers
+            getAllPublishers: getAllPublishers,
+            getBook: getBook,
+            getAuthor: getAuthor,
+            getPublisher: getPublisher
         };
 
         function getAllBooks() {
@@ -32,6 +35,27 @@
                 .then(function(response){
                     return response.data;
                 })
+        }
+
+        function getBook(id){
+            return $http.get('/api/books/'+id+'/').
+                then(function(response){
+                    return response.data;
+            })
+        }
+
+        function getAuthor(id){
+            return $http.get('/api/authors/'+id+'/').
+                then(function(response){
+                    return response.data;
+            })
+        }
+
+        function getPublisher(id){
+            return $http.get('/api/publishers/'+id+'/').
+                then(function(response){
+                    return response.data;
+            })
         }
     }
 }());

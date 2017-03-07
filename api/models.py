@@ -6,6 +6,10 @@ class Author(models.Model):
     first_name = models.CharField(max_length=150)
     last_name = models.CharField(max_length=150)
 
+    @property
+    def get_fullname(self):
+        return "{0}, {1}".format(self.last_name, self.first_name)
+
     def __str__(self):
         return "{0}, {1}".format(self.last_name, self.first_name)
 

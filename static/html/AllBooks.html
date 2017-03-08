@@ -8,40 +8,32 @@
             </div>
 </div>
 
-<div class="row" ng-show="showForm">
-    <form class="col s12">
+<div class="row" ng-show="showForm" ng-submit="add()">
+    <form class="col s12" name="bookForm">
         <div class="row">
             <div class="input-field col s6">
-              <input id="title" type="text" class="validate">
+              <input id="title" type="text" class="validate" ng-model="book.title">
               <label for="title">Title</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
-              <input id="isbn" type="text" class="validate">
+              <input id="isbn" type="text" class="validate" ng-model="book.isbn">
               <label for="isbn">ISBN</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
-              <input id="publish_year" type="text" class="validate">
+              <input id="publish_year" type="text" class="validate" ng-model="book.publish_year">
               <label for="publish_year">Publish Year</label>
             </div>
         </div>
         <label>Author</label>
-        <select class="browser-default">
-            <option value="" disabled selected>Choose your option</option>
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
+        <select class="browser-default" ng-model="book.author" ng-options="author as (author.last_name+ ', ' +author.first_name) for author in authors track by author.id">
         </select>
 
         <label>Publisher</label>
-        <select class="browser-default">
-            <option value="" disabled selected>Choose your option</option>
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
+        <select class="browser-default" ng-model="book.publisher" ng-options="publisher as publisher.name for publisher in publishers track by publisher.id">
         </select>
 
         <div class="row">

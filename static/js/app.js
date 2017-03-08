@@ -2,7 +2,8 @@
  * Created by luisdeolpy on 04/03/2017.
  */
 (function(){
-    var app = angular.module('app', ['ui.router']);
+    var app = angular.module('app', ['ui.router'])
+        .run(['$http', run]);
 
     app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
         $urlRouterProvider.otherwise('/books');
@@ -67,5 +68,9 @@
                         }
                     }
                 });
-    }])
+    }]);
+    function run($http){
+        $http.defaults.xsrfHeaderName='X-CSRFToken';
+        $http.defaults.xsrfCookieName = 'csrftoken';
+    }
 }());

@@ -3,8 +3,7 @@ from .models import Book, Publisher, Author
 
 
 class BookSerializer(serializers.ModelSerializer):
-    author = serializers.CharField(source='author.get_fullname')
-    publisher = serializers.CharField(source='publisher.name')
+
 
     class Meta:
         model = Book

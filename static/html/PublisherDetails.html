@@ -13,6 +13,7 @@
             <li ng-repeat="book in publisher.books">
                 {{ book.title }}, {{ book.publish_year }}
             </li>
+            {{ hasBooks ? '' : 'There is not any book registered for this Publisher' }}
         </ul>
     </dd>
 </dl>

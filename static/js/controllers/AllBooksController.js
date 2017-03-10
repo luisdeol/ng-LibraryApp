@@ -21,17 +21,13 @@
                 publisher: $scope.book.publisher.id
             };
             $scope.book = book;
-            $http.post('/api/books/', book)
+            dataService.postBook(book)
                 .then(function(response){
                     $scope.showForm = false;
-                    $scope.books.push(response.data);
-                    $scope.book.isbn = "";
-                    $scope.book.title = "";
-                    $scope.book.publish_year = "";
+                    $scope.books.push(response);
+                    $scope.book = {};
                     $scope.book.author = $scope.authors[0];
                     $scope.book.publisher = $scope.publishers[0];
-                }, function(){
-                    alert("something went wrong!");
                 });
         };
 

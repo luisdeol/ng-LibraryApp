@@ -6,7 +6,10 @@
         .controller('PublisherController', ['$scope', 'publisher', PublisherController]);
 
     function PublisherController($scope, publisher) {
+        $scope.hasBooks = true;
         $scope.message = "Publisher Details";
         $scope.publisher = publisher;
+        if ($scope.publisher.books.length == 0)
+            $scope.hasBooks = false;
     }
 }());

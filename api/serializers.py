@@ -3,8 +3,6 @@ from .models import Book, Publisher, Author
 
 
 class BookSerializer(serializers.ModelSerializer):
-
-
     class Meta:
         model = Book
         fields = '__all__'

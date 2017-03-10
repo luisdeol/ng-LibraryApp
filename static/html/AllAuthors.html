@@ -8,17 +8,17 @@
             </div>
 </div>
 
-<div class="row" ng-show="showForm">
+<div class="row" ng-show="showForm" ng-submit="add()">
     <form class="col s12">
         <div class="row">
             <div class="input-field col s6">
-              <input id="title" type="text" class="validate">
+              <input id="title" type="text" class="validate" ng-model="author.first_name">
               <label for="title">First Name</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
-              <input id="isbn" type="text" class="validate">
+              <input id="isbn" type="text" class="validate" ng-model="author.last_name">
               <label for="isbn">Last Name</label>
             </div>
         </div>

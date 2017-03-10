@@ -14,7 +14,8 @@
             getBook: getBook,
             getAuthor: getAuthor,
             getPublisher: getPublisher,
-            postAuthor: postAuthor
+            postAuthor: postAuthor,
+            postPublisher: postPublisher
         };
 
         function getAllBooks() {
@@ -61,6 +62,13 @@
 
         function postAuthor(author){
             return $http.post('/api/authors/', author)
+                .then(function(response){
+                    return response.data;
+                })
+        }
+
+        function postPublisher(publisher){
+            return $http.post('/api/publishers/', publisher)
                 .then(function(response){
                     return response.data;
                 })

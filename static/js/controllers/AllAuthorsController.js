@@ -1,9 +1,9 @@
 /** Created by luisdeolpy on 04/03/2017.**/
 (function(){
     angular.module('app')
-        .controller('AllAuthorsController', ['$scope', 'authors', '$http', 'dataService', AllAuthorsController]);
+        .controller('AllAuthorsController', ['$scope', 'authors', 'dataService', AllAuthorsController]);
 
-    function AllAuthorsController($scope, authors, $http, dataService) {
+    function AllAuthorsController($scope, authors, dataService) {
         $scope.showForm = false;
         $scope.message = "All Authors";
         $scope.authors = authors;

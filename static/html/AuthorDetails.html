@@ -13,8 +13,9 @@
     <dd>
         <ul>
             <li ng-repeat="book in author.books">
-                {{ book.title }}, {{ book.publish_year }}
+                <a ui-sref="bookDetails({id:book.id})">{{ book.title }}, {{ book.publish_year }}</a>
             </li>
+            {{ hasBooks ? '' : 'There is not any book registered for this Publisher' }}
         </ul>
     </dd>
 </dl>

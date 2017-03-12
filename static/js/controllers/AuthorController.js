@@ -3,12 +3,14 @@
  */
 (function(){
     angular.module('app')
-        .controller('AuthorController', ['$scope', '$log', 'author', AuthorController]);
+        .controller('AuthorController', ['$scope', 'author', AuthorController]);
 
-    function AuthorController($scope, $log, author) {
+    function AuthorController($scope, author) {
         $scope.message = "Author Details";
         $scope.author = author;
-        $log.log($scope.author.books);
+        $scope.hasBooks = true;
         $scope.author.fullname = author.last_name+", "+author.first_name;
+        if ($scope.author.books.length == 0)
+            $scope.hasBooks = false;
     }
 }());

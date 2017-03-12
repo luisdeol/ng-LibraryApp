@@ -2,6 +2,13 @@
 
 <div class="row">
             <div class="input-field col s6">
+              <input id="title" type="text" class="validate" ng-model="searchQuery">
+              <label for="title">Search</label>
+            </div>
+</div>
+
+<div class="row">
+            <div class="input-field col s6">
                 <button class="btn waves-effect waves-light" type="submit" name="action" ng-click="showForm=!showForm">Add
                     <i class="material-icons right">send</i>
                 </button>
@@ -35,7 +42,7 @@
 <div id="list-authors">
     <ul class="collection with-header">
         <li class="collection-header"><h4>Authors</h4></li>
-        <li ng-repeat="author in authors" class="collection-item">
+        <li ng-repeat="author in authors | filter: searchQuery" class="collection-item">
           <a ui-sref="authorDetails({id: author.id})">{{ author.last_name }}, {{ author.first_name }}</a>
         </li>
     </ul>

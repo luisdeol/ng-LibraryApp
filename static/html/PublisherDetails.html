@@ -9,11 +9,20 @@
     <dd>{{ publisher.name }}</dd>
     <dt>Books</dt>
     <dd>
-        <ul>
-            <li ng-repeat="book in publisher.books">
-                <a ui-sref="bookDetails({id:book.id})">{{ book.title }}, {{ book.publish_year }}</a>
-            </li>
-            {{ hasBooks ? '' : 'There is not any book registered for this Publisher' }}
-        </ul>
+        <div class="row">
+            <div class="col m4" ng-repeat="book in publisher.books">
+              <div class="card">
+                <div class="card-image">
+                  <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=100%C3%97100&w=100&h=100">
+                  <span class="card-title" style="width:100%; background: rgba(0, 0, 0, 0.5);"><a ui-sref="bookDetails({id:book.id})">{{ book.title }}</a></span>
+                  <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                </div>
+                <div class="card-content">
+                  <p>{{ book.author_fullname }}, {{ book.publish_year }}</p>
+                </div>
+              </div>
+            </div>
+         </div>
+        {{ hasBooks ? '' : 'There is not any book registered for this Publisher' }}
     </dd>
 </dl>

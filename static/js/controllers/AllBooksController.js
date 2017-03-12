@@ -18,7 +18,9 @@
                 isbn: $scope.book.isbn,
                 publish_year: $scope.book.publish_year,
                 author: $scope.book.author.id,
-                publisher: $scope.book.publisher.id
+                publisher: $scope.book.publisher.id,
+                author_fullname: $scope.book.author.last_name+ ', ' +$scope.book.author.first_name,
+                publisher_name: $scope.book.publisher.name
             };
             $scope.book = book;
             dataService.postBook(book)
